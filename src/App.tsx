@@ -66,7 +66,7 @@ const App = () => {
         </Hold>
         <Hold>
           <Cricle onClick={Time} style={{ backgroundColor: time ? "red" : "" }}>
-            <BiTime size={80} className="cha" />
+            <Icons1 className="cha" />
           </Cricle>
           <p>Time & Attendance</p>
         </Hold>
@@ -75,7 +75,7 @@ const App = () => {
             onClick={Benefits}
             style={{ backgroundColor: benefits ? "red" : "" }}
           >
-            <GrStatusGood size={80} className="cha" />
+            <Icons2 className="cha" />
           </Cricle>
           <p>Benefits</p>
         </Hold>
@@ -94,10 +94,9 @@ const App = () => {
       </Main>
       {payroll ? (
         <Second>
-          <AiOutlineDollarCircle
-            size={100}
-            style={{ color: "red", marginLeft: "70px", marginTop: "50px" }}
-          />
+          <Iconm>
+            <AiOutlineDollarCircle />
+          </Iconm>
           <Holder>
             <h3>Payroll</h3>
             <p>
@@ -111,10 +110,9 @@ const App = () => {
       ) : null}
       {time ? (
         <Second>
-          <BiTime
-            size={100}
-            style={{ color: "red", marginLeft: "70px", marginTop: "50px" }}
-          />
+          <Iconm>
+            <BiTime />
+          </Iconm>
           <Holder>
             <h3>Time</h3>
             <p>
@@ -129,10 +127,9 @@ const App = () => {
 
       {benefits ? (
         <Second>
-          <GrStatusGood
-            size={100}
-            style={{ color: "red", marginLeft: "70px", marginTop: "50px" }}
-          />
+          <Iconm>
+            <GrStatusGood />
+          </Iconm>
           <Holder>
             <h3>Benefits</h3>
             <p>
@@ -146,10 +143,9 @@ const App = () => {
       ) : null}
       {hr ? (
         <Second>
-          <AiOutlineDollarCircle
-            size={100}
-            style={{ color: "red", marginLeft: "70px", marginTop: "50px" }}
-          />
+          <Iconm>
+            <AiOutlineDollarCircle />
+          </Iconm>
           <Holder>
             <h3>Hr Management</h3>
             <p>
@@ -164,10 +160,9 @@ const App = () => {
 
       {hire ? (
         <Second>
-          <AiOutlineDollarCircle
-            size={100}
-            style={{ color: "red", marginLeft: "70px", marginTop: "50px" }}
-          />
+          <Iconm>
+            <AiOutlineDollarCircle />
+          </Iconm>
           <Holder>
             <h3>Hiring</h3>
             <p>
@@ -185,6 +180,34 @@ const App = () => {
 
 export default App;
 
+const Iconm = styled.div`
+  color: red;
+  margin-left: 70px;
+  margin-top: 50px;
+  font-size: 90px;
+
+  @media screen and (max-width: 500px) {
+    margin: 0;
+  }
+`;
+
+const Icons1 = styled(BiTime)`
+  font-size: 80px;
+  color: #0e6fd5;
+
+  @media screen and (max-width: 900px) {
+    font-size: 47px;
+  }
+`;
+const Icons2 = styled(GrStatusGood)`
+  font-size: 80px;
+  color: #0e6fd5;
+
+  @media screen and (max-width: 900px) {
+    font-size: 47px;
+  }
+`;
+
 const Read = styled.div`
   color: #0e6fd5;
   text-decoration: underline;
@@ -196,6 +219,10 @@ const Holder = styled.div`
   margin-left: 35px;
   margin-top: 50px;
 
+  @media screen and (max-width: 500px) {
+    margin: 0;
+  }
+
   h3 {
     font-size: 30px;
     margin: 0;
@@ -204,6 +231,10 @@ const Holder = styled.div`
   p {
     color: gray;
     font-size: 20px;
+
+    @media screen and (max-width: 500px) {
+      width: 80%;
+    }
   }
 `;
 
@@ -214,7 +245,17 @@ const Second = styled.div`
   margin-bottom: 10px;
   margin-top: 70px;
   display: flex;
+  border-radius: 5px;
   /* align-items: center; */
+
+  @media screen and (max-width: 500px) {
+    display: block;
+    margin: 0;
+    height: 530px;
+    padding-left: 40px;
+    width: 75%;
+    margin-top: 28px;
+  }
 `;
 
 const Hold = styled.div`
@@ -222,17 +263,28 @@ const Hold = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 500px) {
+    margin-bottom: 20px;
+  }
   p {
     font-weight: 700;
     font-size: 22px;
     margin: 0;
     margin-top: 35px;
+
+    @media screen and (max-width: 500px) {
+      margin-top: 14px;
+    }
   }
 `;
 
 const Icon = styled(AiOutlineDollarCircle)`
   font-size: 80px;
   color: #0e6fd5;
+
+  @media screen and (max-width: 900px) {
+    font-size: 47px;
+  }
 `;
 
 const Cricle = styled.div`
@@ -247,6 +299,17 @@ const Cricle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 500px) {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    color: #0e6fd5;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+      #9cc7ff 0px 50px 100px -20px, #9cc7ff 0px 30px 60px -30px;
+  }
 
   :hover {
     background-color: red;
@@ -264,6 +327,13 @@ const Main = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (max-width: 500px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 `;
 const Container = styled.div`
   display: flex;
